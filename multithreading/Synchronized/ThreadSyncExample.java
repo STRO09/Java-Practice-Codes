@@ -4,6 +4,10 @@ public synchronized void increaseCount(){
 count++;
 }
 
+public int getCount() {
+    return count;
+}
+
 }
 
 
@@ -16,7 +20,7 @@ public void run(){
 for(int i=1;i<=10;i++){
 synchronized (counter) {
             counter.increaseCount();
-            System.out.println(i);
+            System.out.println(counter.getCount());
             System.out.println("Done by + " + Thread.currentThread().getName());
         }
 }
@@ -33,7 +37,7 @@ public void run(){
 for(int i=1;i<=10;i++){
 synchronized (counter) {
             counter.increaseCount();
-            System.out.println(i);
+            System.out.println(counter.getCount());
             System.out.println("Done by + " + Thread.currentThread().getName());
         }
 }
