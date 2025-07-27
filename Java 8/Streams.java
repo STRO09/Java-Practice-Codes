@@ -4,10 +4,10 @@ import java.util.stream.*;
 import java.util.Optional;
 
 
-class User {
+class User1 {
 int id;
 String name;
-public User(int id, String name) {
+public User1(int id, String name) {
 
 this.id=id;
 this.name = name;
@@ -16,7 +16,7 @@ this.name = name;
 @Override 
 public String toString() {
 
-return "User: [ id="+this.id+", name="+this.name+" ]";
+return "User1: [ id="+this.id+", name="+this.name+" ]";
 }
 }
 
@@ -37,11 +37,11 @@ List<String> names = Arrays.asList("Sagar","Stro","Sai","Shino","Vedika");
 
 names.stream().map(String::trim).map(n->n.toUpperCase()).filter(n->n.startsWith("V")).forEach(System.out::println);
 
-//From a list of User objects (id, name), filter users with id > 1, collect only their names into a List
+//From a list of User1 objects (id, name), filter users with id > 1, collect only their names into a List
 
-List<User> userlist = Arrays.asList(new User(1,"Sagar"), new User(2,"Stro"),new User(3,"Murgi"));
+List<User1> userlist = Arrays.asList(new User1(1,"Sagar"), new User1(2,"Stro"),new User1(3,"Murgi"));
 
-List<User> newuserlist =  userlist.stream().filter(n->n.id>1).collect(Collectors.toList());
+List<User1> newuserlist =  userlist.stream().filter(n->n.id>1).collect(Collectors.toList());
 
 newuserlist.forEach(System.out::println);
 

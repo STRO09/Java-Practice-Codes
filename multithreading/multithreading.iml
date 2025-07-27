@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Callable_Future" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CountDownLatch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Cyclic_Barrier" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ExecutorService" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lifecycle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ReentrantLock" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Synchronized" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

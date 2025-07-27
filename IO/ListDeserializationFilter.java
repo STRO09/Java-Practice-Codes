@@ -4,15 +4,37 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
 
+
+class Studentl {
+
+    private int id;
+    private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
 public class ListDeserializationFilter {
     public static void main(String[] args) {
         try(
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("SerializeList.txt"));
         ){
-            List<Student> studentlist =(List<Student>) ois.readObject();
+            List<Studentl> studentlist =(List<Studentl>) ois.readObject();
             int i=1;
             System.out.println("Object read successfully. Below is the filtered output= ");
-            for(Student student: studentlist){
+            for(Studentl student: studentlist){
                 if(student.getId()==1){
                 System.out.println(student);
                 }

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class Student implements Serializable{
+class Student1 implements Serializable{
     private int id;
     private String name;
     private int marks;
@@ -28,7 +28,7 @@ class Student implements Serializable{
         return "Student: { id: "+this.id+", name: "+this.name+", marks: "+this.marks+"}";
     }
 
-    public Student(int id, String name, int marks) {
+    public Student1(int id, String name, int marks) {
 
         this.id = id;
         this.name = name;
@@ -39,11 +39,11 @@ class Student implements Serializable{
 
 public class ListSerialization {
     public static void main(String[] args) {
-        Student s1 = new Student(1, "sagar",100);
-        Student s2 = new Student(2, "Stro",99);
-        Student s3 = new Student(3, "Theseus",98);
+        Student1 s1 = new Student1(1, "sagar",100);
+        Student1 s2 = new Student1(2, "Stro",99);
+        Student1 s3 = new Student1(3, "Theseus",98);
 
-        List<Student> studentList = new ArrayList<Student>();
+        List<Student1> studentList = new ArrayList<Student1>();
         studentList.add(s3);
         studentList.add(s1);
         studentList.add(s2);
