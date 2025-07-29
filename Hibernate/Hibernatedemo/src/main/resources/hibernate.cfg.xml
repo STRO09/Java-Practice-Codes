@@ -3,8 +3,8 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedemodb</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedemodb?useSSL=false</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">tfws.wow///POP()</property>
 
@@ -12,7 +12,8 @@
         <property name="hibernate.connection.pool_size">1</property>
 
         <!-- SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
 
         <!-- Logging SQL to console -->
         <property name="hibernate.show_sql">true</property>
@@ -22,6 +23,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapped Entity -->
-        <mapping class="com.example.Student"/>
+        <mapping class="com.study.hibernate.Hibernatedemo.models.Student"/>
     </session-factory>
 </hibernate-configuration>
