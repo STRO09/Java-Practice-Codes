@@ -9,11 +9,14 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name="Studentname", nullable = false)
+
+	@Column(name = "Studentname", nullable = false)
 	private String name;
-	@Column(name="marks")
+	@Column(name = "marks")
 	private int marks;
+
+	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+	private IdCard card;
 	
 	public Student() {}
 
@@ -47,9 +50,17 @@ public class Student {
 		this.marks = marks;
 	}
 
+	public IdCard getCard() {
+		return card;
+	}
+
+	public void setCard(IdCard card) {
+		this.card = card;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + ", card=" + card + "]";
 	}
-	
+
 }

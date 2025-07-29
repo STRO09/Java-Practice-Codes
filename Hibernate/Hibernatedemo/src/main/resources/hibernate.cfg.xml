@@ -23,6 +23,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapped Entity -->
+        <mapping class="com.study.hibernate.Hibernatedemo.models.IdCard"/>
         <mapping class="com.study.hibernate.Hibernatedemo.models.Student"/>
     </session-factory>
 </hibernate-configuration>

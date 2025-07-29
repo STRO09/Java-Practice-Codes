@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.study.hibernate.Hibernatedemo.models.IdCard;
 import com.study.hibernate.Hibernatedemo.models.Student;
 import com.study.hibernate.Hibernatedemo.util.HibernateUtil;
 
@@ -43,7 +44,7 @@ public class App {
 
 	public static void updateData(int id, int newmarks, String newname) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Student student = session.get(Student.class, id);
+		Student student = session.get(Student.class, id); // FETCHED OBJ BECOME PERSISTENT. MEANING CHANGES TO THE OBJECT WILL BE AUTOMATICALLY PERSISTED(insert)
 		Transaction transaction = session.beginTransaction();
 		if (student != null) {
 			// if you want to allow nulls use Integer for marks
@@ -92,21 +93,53 @@ public class App {
 		session.close();
 	}
 
+	public static void assignCard(int id, String cardname) {
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Student student = session.get(Student.class, id);
+		if (student != null) {
+			IdCard card = new IdCard(cardname);
+			card.setStudent(student);
+			student.setCard(card);
+
+			Transaction transaction = session.beginTransaction();
+			session.persist(student);
+			transaction.commit();
+			session.close();
+			System.out.println("Id Card assigned successfully");
+		} else {
+			System.out.println("No Student with given ID found");
+		}
+	}
+
+	public static void getStudentIdDetails(int id) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Student student = session.get(Student.class, id);
+		if (student != null) {
+
+			System.out.println(student);
+		} else {
+
+			System.out.println("No Student with given ID found");
+		}
+	}
+
 	public static void main(String[] args) {
 
 //		insertData(99, "Theseus");
-
+//
 //		returnData(1);
 //		returnData(54);
-//
-////		updateData(1, 95, null);
+////
+//		updateData(1, 95, null);
 //		returnData(1);
-
-		readData();
-		deleteData(2);
-		returnData(2);
-		readData();
-		
+//
+//		readData();
+//		deleteData(2);
+//		returnData(2);
+//		readData();
+//		assignCard(1, "S123");
+		getStudentIdDetails(1);
 
 	}
 }
