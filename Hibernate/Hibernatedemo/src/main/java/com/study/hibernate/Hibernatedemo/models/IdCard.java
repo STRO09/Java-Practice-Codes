@@ -33,9 +33,6 @@ public class IdCard {
 		return cardid;
 	}
 
-	public void setCardid(int cardid) {
-		this.cardid = cardid;
-	}
 
 	public String getCardName() {
 		return cardName;

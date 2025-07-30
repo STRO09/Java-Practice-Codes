@@ -15,6 +15,7 @@ public class HibernateUtil {
 
 		} catch (Throwable e) {
 			// TODO: handle exception
+			 e.printStackTrace(); // ADD THIS LINE
 			throw new ExceptionInInitializerError(e);
 		}
 
